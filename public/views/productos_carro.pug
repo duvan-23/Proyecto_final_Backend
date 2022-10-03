@@ -1,6 +1,10 @@
 extends carrito 
 
 block productosCarrito
+    style(type='text/css').
+        .botonComprar:hover{
+            border: 2px solid darkslateblue;
+        }
     div.col-sm-7
         h1.text-center(style="color:blue;")!="Productos del Carrito"
         -if(idcarrito)
@@ -20,7 +24,7 @@ block productosCarrito
                     input(type='hidden',id=`admin2`,value=`${productos[0].admin}` )
                     each producto, index in productos
                         div.col-sm-4(style="hight:40px;")
-                            div.card
+                            div.card(style="border: 2px solid;")
                                 img.card-img-top(src=producto.foto,style="width:100px; margin-left:40px;")
                                 div.card-body
                                     h5.card-title=producto.nombre
@@ -47,7 +51,7 @@ block productosCarrito
                     div.col-12
                         div.d-flex.justify-content-center
                             br
-                            button#comprar.text-center.btn.btn-warning.mt-3.mb-2.al(type="button", name="comprar") Realizar compra
+                            button#comprar.text-center.btn.btn-warning.mt-3.mb-2.al.botonComprar(type="button", name="comprar", style="width:220px;color:white;") Realizar compra
                             br
             -else
                 h2.alert.alert-warning!="No hay productos"

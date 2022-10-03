@@ -9,7 +9,7 @@ block productos
                 input(type='hidden',id=`admin`,value=`${productos[0].admin}` )
                 each producto, index in productos
                     div.col-sm-4(style="hight:40px;")
-                        div.card
+                        div.card(style="border: 2px solid;")
                             img.card-img-top(src=producto.foto,style="width:100px; margin-left:40px;")
                             div.card-body
                                 h5.card-title=producto.nombre

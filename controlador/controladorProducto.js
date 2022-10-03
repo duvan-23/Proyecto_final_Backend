@@ -43,7 +43,7 @@ const postProducto = async (req, res) => {
         res.send({error:-1,descripcion: "ruta /api/productos/ metodo POST no autorizado"});
     }
 }
-const deleteProducto = async (req, res) => {//error
+const deleteProducto = async (req, res) => {
     const { url, method } = req;
     logger.info(`Ruta ${url}, Metodo ${method}`);
     if(administrador){
@@ -54,7 +54,7 @@ const deleteProducto = async (req, res) => {//error
         res.send({error:-1,descripcion: "ruta /api/productos/:id metodo DELETE no autorizado"});
     }
 }
-const putProducto = async (req, res) => {//error
+const putProducto = async (req, res) => {
     const { url, method } = req;
     logger.info(`Ruta ${url}, Metodo ${method}`);
     if(administrador){

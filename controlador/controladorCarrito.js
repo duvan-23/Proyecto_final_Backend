@@ -20,7 +20,7 @@ const origenCarritoById = async (req, res) => {
         const usuario =await  services.mostrarUsuarioByUser(req.user.username);
         return res.render( './views/productos_carro', {carritos:carritos,productos:productos[0].productos,idcarrito:datoCarrito,nombre:usuario.name});
 }
-const postCarrito = async (req, res) => {//rerror
+const postCarrito = async (req, res) => {
     const { url, method } = req;
     logger.info(`Ruta ${url}, Metodo ${method}`);
     let producto;
@@ -67,7 +67,7 @@ const postCarritoProductos = async (req, res) => {
         return res.render('./views/productos_carro',{carritos: carritos,productos:productos1,idcarrito:datoCarrito,nombre:usuario.name});
     }
 }
-const deleteCarrito = async (req, res) => {//error
+const deleteCarrito = async (req, res) => {
     const { url, method } = req;
     logger.info(`Ruta ${url}, Metodo ${method}`);
     const {id} = req.params;
@@ -83,7 +83,7 @@ const deleteCarritoProductos = async (req, res) => {
         await services.deleteByIdCarritoP2(Number(id), Number(id_prod));
         res.render( './views/productos', {productos:await services.mostrarCarrito(req.user.username)});
 }
-const actualizarCarritoProductos = async (req, res) => {//error
+const actualizarCarritoProductos = async (req, res) => {
     const { url, method } = req;
     logger.info(`Ruta ${url}, Metodo ${method}`);
     let producto,producto2;
